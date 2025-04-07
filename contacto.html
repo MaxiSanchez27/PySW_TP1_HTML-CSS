@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto | Gimnasio Top</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">GimnasioTop</div>
+    <nav class="nav">
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="clases.html">Clases</a></li>
+        <li><a href="entrenadores.html">Entrenadores</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contacto">
+    <h2>Contacto</h2>
+    <form class="formulario" id="formulario" action="#modal" method="dialog">
+      <input type="text" placeholder="Nombre completo" required pattern="[A-Za-z\s]{3,}" />
+      <input type="email" placeholder="Correo electrónico" required />
+      <input type="tel" placeholder="Teléfono (opcional)" pattern="[0-9]{7,15}" />
+      <textarea placeholder="Escribí tu mensaje..." required minlength="10"></textarea>
+      <button type="submit" class="boton-enviar">Enviar</button>
+      <div class="spinner"></div>
+    </form>
+  </section>
+
+  <dialog id="modal" class="modal">
+    <p>¡Gracias por tu mensaje! Te responderemos pronto.</p>
+    <button onclick="document.getElementById('modal').close()">Cerrar</button>
+  </dialog>
+</body>
+</html>

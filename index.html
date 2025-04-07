@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gimnasio Top</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+  
+<body>
+  <header>
+    <button id="darkToggle">🌙</button>
+
+    <div class="logo">GimnasioTop</div>
+    <nav class="nav">
+      <ul class="menu">
+        <li class="dropdown">
+          <a href="#">Clases</a>
+          <ul class="submenu">
+            <li><a href="clases.html">Musculación</a></li>
+            <li><a href="clases.html">CrossFit</a></li>
+            <li><a href="clases.html">Yoga</a></li>
+            <li><a href="clases.html">Spinning</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Entrenadores</a>
+          <ul class="submenu">
+            <li><a href="entrenadores.html">Ver Todos</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Precios</a>
+          <ul class="submenu">
+            <li><a href="precios.html">Planes</a></li>
+          </ul>
+        </li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <video autoplay muted loop class="hero-video">
+      <source src="videos/entrenamiento.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Entrená como nunca</h1>
+      <p>Transformá tu cuerpo y tu mente</p>
+    </div>
+  </section>
+  <section class="clases">
+    <h2>Clases Destacadas</h2>
+    <div class="clases-grid">
+      <div class="clase-card">
+        <img src="images/musculacion.jpg" alt="Musculación">
+        <h3>Musculación</h3>
+        <p>Fortalecé tus músculos con rutinas intensas y progresivas.</p>
+      </div>
+      <div class="clase-card">
+        <img src="images/yoga.jpg" alt="Yoga">
+        <h3>Yoga</h3>
+        <p>Conectá cuerpo y mente con sesiones de relajación profunda.</p>
+      </div>
+      <div class="clase-card">
+        <img src="images/crossfit.jpg" alt="CrossFit">
+        <h3>CrossFit</h3>
+        <p>Entrenamiento funcional de alta intensidad para todos los niveles.</p>
+      </div>
+      <div class="clase-card">
+        <img src="images/spinning.jpg" alt="Spinning">
+        <h3>Spinning</h3>
+        <p>Cardio extremo en bici con música motivadora.</p>
+      </div>
+    </div>
+  </section>
+  <section class="contador">
+    <div class="contador-item">
+      <span class="numero">500+</span>
+      <p>Socios Satisfechos</p>
+    </div>
+    <div class="contador-item">
+      <span class="numero">120</span>
+      <p>Clases Semanales</p>
+    </div>
+    <div class="contador-item">
+      <span class="numero">30</span>
+      <p>Entrenadores Expertos</p>
+    </div>
+  </section>
+  <section class="testimonios">
+    <input type="radio" name="slider" id="test1" checked>
+    <input type="radio" name="slider" id="test2">
+    <input type="radio" name="slider" id="test3">
+  
+    <div class="cards">
+      <div class="card" id="c1">
+        <p>"Increíble ambiente de entrenamiento. ¡Volveré cada semana!"</p>
+        <h4>María López</h4>
+      </div>
+      <div class="card" id="c2">
+        <p>"Los entrenadores están súper capacitados. ¡Muy recomendable!"</p>
+        <h4>Carlos Ruiz</h4>
+      </div>
+      <div class="card" id="c3">
+        <p>"Me encantan las clases de yoga, puro relax y energía."</p>
+        <h4>Lucía Fernández</h4>
+      </div>
+    </div>
+  
+    <div class="puntos">
+      <label for="test1"></label>
+      <label for="test2"></label>
+      <label for="test3"></label>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <div class="newsletter">
+      <h3>Suscribite al Newsletter</h3>
+      <form>
+        <input type="email" placeholder="Tu correo electrónico" required>
+        <button type="submit">Suscribirme</button>
+      </form>
+    </div>
+  
+    <div class="redes">
+      <a href="#" aria-label="Facebook"><svg width="24" height="24" fill="currentColor"><use xlink:href="#icon-facebook"></use></svg></a>
+      <a href="#" aria-label="Instagram"><svg width="24" height="24" fill="currentColor"><use xlink:href="#icon-instagram"></use></svg></a>
+      <a href="#" aria-label="Twitter"><svg width="24" height="24" fill="currentColor"><use xlink:href="#icon-twitter"></use></svg></a>
+    </div>
+  
+    <div class="mapa">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="200" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('darkToggle').addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+  
+</body>
+</html>
