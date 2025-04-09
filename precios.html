@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Precios | Gimnasio Top</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/precios.css" />
+  <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
   <header>
@@ -22,38 +23,63 @@
 
   <section class="precios">
     <h2>Planes y Precios</h2>
+
+    <!-- Toggle mensual/anual -->
+    <div class="toggle-precio">
+      <label>
+        <input type="checkbox" id="togglePlan" />
+        <span class="slider"></span>
+        <span class="etiqueta">Mensual / Anual</span>
+      </label>
+    </div>
+
     <div class="planes">
       <div class="plan">
         <h3>Básico</h3>
-        <p class="precio">$15.000</p>
+        <p class="precio" data-mensual="$15.000" data-anual="$150.000">$15.000</p>
         <ul>
-          <li>Acceso al gimnasio</li>
-          <li>1 clase semanal</li>
-          <li>Asesoramiento inicial</li>
+          <li title="Incluye acceso a máquinas y pesas">Acceso al gimnasio</li>
+          <li title="Una clase grupal a la semana">1 clase semanal</li>
+          <li title="Evaluación inicial con entrenador">Asesoramiento inicial</li>
         </ul>
         <button>Elegir Plan</button>
       </div>
-      <div class="plan destacado">
+
+      <div class="plan">
         <h3>Full</h3>
-        <p class="precio">$25.000</p>
+        <p class="precio" data-mensual="$25.000" data-anual="$250.000">$25.000</p>
         <ul>
-          <li>Gimnasio ilimitado</li>
-          <li>Clases ilimitadas</li>
-          <li>Seguimiento personalizado</li>
+          <li title="Sin límite de horarios">Gimnasio ilimitado</li>
+          <li title="Acceso libre a todas las clases">Clases ilimitadas</li>
+          <li title="Seguimiento semanal personalizado">Seguimiento personalizado</li>
         </ul>
         <button>Elegir Plan</button>
       </div>
+
       <div class="plan">
         <h3>Pro</h3>
-        <p class="precio">$30.000</p>
+        <p class="precio" data-mensual="$30.000" data-anual="$300.000">$30.000</p>
         <ul>
-          <li>Todo lo anterior</li>
-          <li>Acceso a eventos</li>
-          <li>Consultas con nutricionista</li>
+          <li title="Incluye todos los beneficios anteriores">Todo lo anterior</li>
+          <li title="Participación en competencias y eventos especiales">Acceso a eventos</li>
+          <li title="Consultas sin cargo con nutricionista">Consultas con nutricionista</li>
         </ul>
         <button>Elegir Plan</button>
       </div>
     </div>
   </section>
+
+  <script>
+    const toggle = document.getElementById("togglePlan");
+    const precios = document.querySelectorAll(".precio");
+
+    toggle.addEventListener("change", () => {
+      precios.forEach(precio => {
+        const mensual = precio.getAttribute("data-mensual");
+        const anual = precio.getAttribute("data-anual");
+        precio.textContent = toggle.checked ? anual : mensual;
+      });
+    });
+  </script>
 </body>
 </html>

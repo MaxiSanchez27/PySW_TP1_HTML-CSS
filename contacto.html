@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contacto | Gimnasio Top</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contacto.css" />
+  <link rel="stylesheet" href="css/base.css">
 </head>
 <body>
   <header>
@@ -22,13 +23,48 @@
 
   <section class="contacto">
     <h2>Contacto</h2>
-    <form class="formulario" id="formulario" action="#modal" method="dialog">
-      <input type="text" placeholder="Nombre completo" required pattern="[A-Za-z\s]{3,}" />
-      <input type="email" placeholder="Correo electrónico" required />
-      <input type="tel" placeholder="Teléfono (opcional)" pattern="[0-9]{7,15}" />
-      <textarea placeholder="Escribí tu mensaje..." required minlength="10"></textarea>
+    <form class="formulario" id="formulario" novalidate>
+      <label>
+        Nombre completo
+        <input type="text" name="nombre" placeholder="Ej: Juan Pérez" required pattern="[A-Za-z\s]{3,}" />
+        <small>Debe tener al menos 3 letras.</small>
+      </label>
+
+      <label>
+        Correo electrónico
+        <input type="email" name="correo" placeholder="ejemplo@correo.com" required />
+        <small>Ingresá un correo válido.</small>
+      </label>
+
+      <label>
+        Teléfono (opcional)
+        <input type="tel" name="telefono" placeholder="Ej: 3815551234" pattern="[0-9]{7,15}" />
+        <small>Solo números, entre 7 y 15 dígitos.</small>
+      </label>
+
+      <label>
+        Motivo de contacto
+        <select name="motivo" required>
+          <option value="" disabled selected>Seleccionar...</option>
+          <option value="consulta">Consulta general</option>
+          <option value="sugerencia">Sugerencia</option>
+          <option value="queja">Reclamo / Queja</option>
+        </select>
+      </label>
+
+      <label>
+        Mensaje
+        <textarea name="mensaje" placeholder="Contanos cómo podemos ayudarte..." required minlength="10"></textarea>
+        <small>Mínimo 10 caracteres.</small>
+      </label>
+
+      <label class="checkbox">
+        <input type="checkbox" required />
+        Acepto la política de privacidad.
+      </label>
+
       <button type="submit" class="boton-enviar">Enviar</button>
-      <div class="spinner"></div>
+      <div class="spinner" id="spinner"></div>
     </form>
   </section>
 
@@ -36,5 +72,37 @@
     <p>¡Gracias por tu mensaje! Te responderemos pronto.</p>
     <button onclick="document.getElementById('modal').close()">Cerrar</button>
   </dialog>
+
+  <script>
+    const form = document.getElementById("formulario");
+    const spinner = document.getElementById("spinner");
+    const modal = document.getElementById("modal");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      spinner.style.display = "block";
+
+      setTimeout(() => {
+        spinner.style.display = "none";
+        modal.showModal();
+        form.reset();
+
+        const inputs = form.querySelectorAll("input, textarea, select");
+        inputs.forEach(el => el.classList.remove("validado"));
+      }, 1500);
+    });
+
+    form.querySelectorAll("input, textarea, select").forEach((input) => {
+      input.addEventListener("input", () => {
+        input.classList.add("validado");
+      });
+    });
+  </script>
 </body>
 </html>

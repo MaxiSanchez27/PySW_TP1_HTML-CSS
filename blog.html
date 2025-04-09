@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Fitness | Gimnasio Top</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/blog.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">GimnasioTop</div>
+    <nav class="nav">
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="clases.html">Clases</a></li>
+        <li><a href="entrenadores.html">Entrenadores</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="blog">
+    <h2>Blog Fitness</h2>
+
+    <!-- Filtros por categoría -->
+    <div class="filtros-blog">
+      <input type="radio" name="categoria" id="todos" checked>
+      <input type="radio" name="categoria" id="nutricion">
+      <input type="radio" name="categoria" id="entrenamiento">
+      <input type="radio" name="categoria" id="bienestar">
+
+      <div class="tags">
+        <label for="todos">Todos</label>
+        <label for="nutricion">Nutrición</label>
+        <label for="entrenamiento">Entrenamiento</label>
+        <label for="bienestar">Bienestar</label>
+      </div>
+    </div>
+
+    <!-- Artículos -->
+    <div class="articulos">
+      <article class="post nutricion">
+      <h3>Alimentos clave para ganar músculo</h3>
+      <p>Conocé los mejores nutrientes para acompañar tu entrenamiento de fuerza.</p>
+      <div class="comentarios">
+        <div class="comentario"><span class="avatar"></span>Excelente guía 🔥</div>
+        <div class="comentario"><span class="avatar"></span>¡Muy útil para armar mi dieta!</div>
+      </div>
+      </article>
+
+      <article class="post entrenamiento">
+      <h3>Rutina de cuerpo completo en 30 minutos</h3>
+      <p>Ideal para quienes no tienen mucho tiempo pero quieren resultados.</p>
+      <div class="comentarios">
+        <div class="comentario"><span class="avatar"></span>Me encantó el enfoque rápido y funcional.</div>
+      </div>
+      </article>
+
+      <article class="post bienestar">
+      <h3>Mindfulness y deporte: el combo ideal</h3>
+      <p>Mejorá tu rendimiento aprendiendo a estar presente durante el entrenamiento.</p>
+      <div class="comentarios">
+        <div class="comentario"><span class="avatar"></span>Muy interesante! ✨</div>
+      </div>
+      </article>
+
+      <article class="post nutricion">
+      <h3>Errores comunes al hacer dieta</h3>
+      <p>Descubrí los errores más frecuentes y cómo evitarlos para tener resultados reales.</p>
+      <div class="comentarios">
+        <div class="comentario"><span class="avatar"></span>¡Tal cual lo que me pasaba!</div>
+      </div>
+      </article>
+
+      <article class="post entrenamiento">
+      <h3>HIIT vs Cardio tradicional</h3>
+      <p>Compará los beneficios de ambos métodos y elegí el ideal para vos.</p>
+      <div class="comentarios">
+        <div class="comentario"><span class="avatar"></span>¡Muy claro! Gracias por la comparación.</div>
+      </div>
+      </article>
+
+      <article class="post bienestar">
+      <h3>Cómo mantener la motivación a largo plazo</h3>
+      <p>Trucos mentales y rutinas para no abandonar el gimnasio nunca más.</p>
+      <div class="comentarios">
+        <div class="comentario"><span class="avatar"></span>¡Era justo lo que necesitaba leer hoy!</div>
+      </div>
+      </article>
+
+      <article class="post nutricion">
+      <h3>Superalimentos para deportistas</h3>
+      <p>Descubrí los alimentos que potencian tu rendimiento físico.</p>
+      <div class="comentarios">
+        <div class="comentario"><span class="avatar"></span>¡Increíble información!</div>
+      </div>
+      </article>
+
+      <article class="post entrenamiento">
+      <h3>Entrenamiento funcional: beneficios y ejercicios</h3>
+      <p>Conocé cómo este tipo de entrenamiento mejora tu vida diaria.</p>
+      <div class="comentarios">
+        <div class="comentario"><span class="avatar"></span>¡Muy práctico y útil!</div>
+      </div>
+      </article>
+
+      <article class="post bienestar">
+      <h3>La importancia del descanso en el deporte</h3>
+      <p>Aprendé por qué el descanso es clave para tu progreso.</p>
+      <div class="comentarios">
+        <div class="comentario"><span class="avatar"></span>¡Nunca lo había considerado, gracias!</div>
+      </div>
+      </article>
+
+      <article class="post nutricion">
+      <h3>Batidos post-entrenamiento: recetas fáciles</h3>
+      <p>Probá estas recetas para recuperar energía después de entrenar.</p>
+      <div class="comentarios">
+        <div class="comentario"><span class="avatar"></span>¡Deliciosas opciones!</div>
+      </div>
+      </article>
+
+      <article class="post entrenamiento">
+      <h3>Cómo evitar lesiones al entrenar</h3>
+      <p>Consejos prácticos para mantenerte seguro mientras te ejercitás.</p>
+      <div class="comentarios">
+        <div class="comentario"><span class="avatar"></span>¡Muy útil para principiantes!</div>
+      </div>
+      </article>
+
+      <article class="post bienestar">
+      <h3>Yoga para deportistas: beneficios y posturas</h3>
+      <p>Incorporá el yoga a tu rutina para mejorar flexibilidad y concentración.</p>
+      <div class="comentarios">
+        <div class="comentario"><span class="avatar"></span>¡Me encantó la idea!</div>
+      </div>
+      </article>
+    </div>
+    
+  </section>
+
+  <script>
+    const posts = document.querySelectorAll(".post");
+
+    const revealOnScroll = () => {
+      posts.forEach((post, i) => {
+        const rect = post.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          post.style.animationDelay = `${i * 0.1}s`;
+          post.classList.add("reveal");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
+</body>
+</html>

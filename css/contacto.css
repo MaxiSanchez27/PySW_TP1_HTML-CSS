@@ -1,0 +1,145 @@
+/* HEADER (igual al resto del sitio) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #6C63FF;
+    position: relative;
+}
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+  }
+  .nav .menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  .menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+  }
+  .menu a:hover {
+    color: #00BFA6;
+  }
+  
+  /* SECCIÓN CONTACTO */
+  .contacto {
+    padding: 3rem 1rem;
+    max-width: 700px;
+    margin: auto;
+  }
+  .contacto h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  
+  /* FORMULARIO */
+  .formulario {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  
+  .formulario input,
+  .formulario textarea {
+    padding: 0.75rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  /* Validación en tiempo real */
+  .formulario input:valid,
+  .formulario textarea:valid {
+    border-color: limegreen;
+    box-shadow: 0 0 0 2px rgba(50, 205, 50, 0.2);
+  }
+  
+  .formulario input:invalid:focus,
+  .formulario textarea:invalid:focus {
+    border-color: crimson;
+    box-shadow: 0 0 0 2px rgba(220, 20, 60, 0.2);
+  }
+  
+  /* BOTÓN */
+  .boton-enviar {
+    background: #6C63FF;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+  .boton-enviar:hover {
+    background: #00BFA6;
+  }
+  
+  /* SPINNER */
+  .spinner {
+    display: none;
+    margin: 1rem auto 0;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #6C63FF;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: girar 1s linear infinite;
+  }
+  @keyframes girar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  /* MODAL */
+  .modal {
+    padding: 2rem;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+  .modal button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #6C63FF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .modal button:hover {
+    background: #00BFA6;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .formulario {
+      grid-template-columns: 1fr;
+    }
+  }
+  /* Solo mostrar borde verde si tiene contenido y es válido */
+input:valid:not(:placeholder-shown),
+textarea:valid:not(:placeholder-shown),
+select:valid {
+  border-color: limegreen;
+  box-shadow: 0 0 0 2px rgba(50, 205, 50, 0.2);
+}
+
+/* Eliminar borde verde de campos vacíos opcionales */
+input:placeholder-shown {
+  border-color: #ccc;
+  box-shadow: none;
+}

@@ -1,0 +1,170 @@
+/* =======================
+   VARIABLES CSS (Colores & Temas)
+======================= */
+:root {
+    --color-principal: #6C63FF;
+    --color-secundario: #00BFA6;
+    --color-fondo: #ffffff;
+    --color-texto: #111111;
+    --color-footer: #f3f3f3;
+    --color-hover: #e0e0e0;
+    --color-oscuro: #1e1e1e;
+  }
+  
+  /* =======================
+     MODO OSCURO
+  ======================= */
+  body.dark-mode {
+    --color-fondo: #1e1e1e;
+    --color-texto: #f0f0f0;
+    --color-footer: #2a2a2a;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+  }
+  
+  /* =======================
+     ESTILOS GLOBALES
+  ======================= */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  a {
+    color: var(--color-principal);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  a:hover {
+    color: var(--color-secundario);
+  }
+  
+  /* =======================
+     MICRO-INTERACCIONES
+  ======================= */
+  button,
+  a,
+  .menu a,
+  .plan,
+  .card,
+  input,
+  textarea {
+    transition: all 0.2s ease;
+  }
+  
+  button:hover,
+  a:hover,
+  .plan:hover,
+  .card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* =======================
+     FOCUS ACCESIBLE
+  ======================= */
+  a:focus,
+  button:focus,
+  input:focus,
+  textarea:focus {
+    outline: 2px dashed var(--color-secundario);
+    outline-offset: 4px;
+  }
+  
+  /* =======================
+     SCROLL SNAP
+  ======================= */
+  .scroll-snap-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .scroll-snap-child {
+    scroll-snap-align: center;
+    flex: 0 0 100%;
+  }
+  
+  /* =======================
+     CLIP-PATH EFECTO
+  ======================= */
+  .clip-imagen {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    overflow: hidden;
+  }
+  
+  /* =======================
+     ANIMACIONES CON KEYFRAMES
+  ======================= */
+  @keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes contar {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .spinner {
+    border: 5px solid #ccc;
+    border-top: 5px solid var(--color-principal);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: girar 1s linear infinite;
+    display: none;
+    margin: 1rem auto;
+  }
+  
+  .numero {
+    animation: contar 0.8s ease forwards;
+  }
+  
+  /* =======================
+     SVG TRANSITION
+  ======================= */
+  svg:hover use {
+    fill: var(--color-secundario);
+    transition: fill 0.3s;
+  }
+  
+  /* =======================
+     AVATARES CON PSEUDOELEMENTOS
+  ======================= */
+  .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ccc;
+    display: inline-block;
+    position: relative;
+  }
+  .avatar::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #999, #666);
+  }
+  
+  /* =======================
+     ACCESIBILIDAD EXTRA
+  ======================= */
+  [aria-label] {
+    cursor: pointer;
+  }
+  
+  [aria-label]:focus {
+    outline: 2px dashed var(--color-secundario);
+    outline-offset: 4px;
+  }
+  
