@@ -1,0 +1,97 @@
+@media (max-width: 480px) {
+    /* Ajustar encabezado */
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .logo {
+      font-size: 1.2rem;
+    }
+  
+    .menu {
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+    }
+  
+    .submenu {
+      position: static;
+      box-shadow: none;
+      background: var(--bg);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+  
+    /* Hero */
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  
+    /* Clases */
+    .clase-card h3 {
+      font-size: 1.1rem;
+    }
+  
+    .clase-card p {
+      font-size: 0.9rem;
+    }
+  
+    /* Contador */
+    .contador {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .numero {
+      font-size: 2rem;
+    }
+  
+    /* Testimonios */
+    .cards {
+      height: auto;
+    }
+  
+    /* Formulario */
+    .formulario {
+      display: grid;
+      gap: 1rem;
+    }
+  
+    .formulario input,
+    .formulario textarea,
+    .formulario button {
+      width: 100%;
+      font-size: 0.95rem;
+    }
+  
+    /* Tabla horarios */
+    .tabla-horarios table {
+      width: 100%;
+      display: block;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+  
+    /* Footer */
+    .footer .newsletter input {
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+  
+    .footer .newsletter button {
+      width: 100%;
+    }
+  
+    /* Blog etiquetas */
+    .tags label {
+      margin: 0.25rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+  
