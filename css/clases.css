@@ -87,13 +87,15 @@ header {
     display: none;
   }
   
-  /* Galería estilo masonry */
   .galeria {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 280px));
+    justify-content: center;
+    align-items: start;
     gap: 1rem;
     margin-top: 2rem;
   }
+  
   
   /* Tarjetas con overlay y zoom */
   .clase {
@@ -140,6 +142,7 @@ header {
   /* TABLA DE HORARIOS */
   .horarios {
     padding: 2rem;
+    text-align: center;
   }
   
   .tabla-horarios {
